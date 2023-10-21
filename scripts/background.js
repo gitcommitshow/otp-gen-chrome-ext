@@ -1,3 +1,5 @@
+import { KeyUtils } from '../scripts/key-utils.js'
+
 chrome.runtime.onInstalled.addListener(function() {
     chrome.contextMenus.create({id: "paste_otp", "title": "Paste OTP Token", "contexts":["editable"]});
 });
@@ -18,5 +20,6 @@ chrome.commands.onCommand.addListener(function(command) {
 
 function pasteOTP(tabId) {
     KeyUtils.advanceCounter();
-    chrome.tabs.sendMessage(tabId, { key: KeyUtils.getOTP() });
+    // chrome.tabs.sendMessage(tabId, { key: KeyUtils.getOTP() });
+    chrome.tabs.sendMessage(tabId, { key: KeyUtils.getTOTP() });
 }

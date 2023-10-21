@@ -1,4 +1,4 @@
-function KeyUtils() {
+export function KeyUtils() {
 }
 
 KeyUtils.getSecret = function() {
@@ -14,8 +14,16 @@ KeyUtils.advanceCounter = function() {
 };
 
 KeyUtils.getOTP = function() {
-    var otp = window.otplib;
     return hotp(KeyUtils.getSecret(), KeyUtils.getCounter(), "dec6");
+};
+
+KeyUtils.getTimeInterval = function(){
+    const currentTime = Math.floor(new Date().getTime() / 1000 / 30); // 30-second intervals
+    return currentTime;
+}
+
+KeyUtils.getTOTP = function() {
+    return hotp(KeyUtils.getSecret(), KeyUtils.getTimeInterval(), "dec6");
 };
 
 
