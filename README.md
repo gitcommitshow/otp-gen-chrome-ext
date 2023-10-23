@@ -3,7 +3,7 @@ A Chrome extension for generating [TOTP]([https://en.wikipedia.org/wiki/HMAC-bas
 
 ![Popup](/screenshots/ext_popup.png)
 
-**Notice**: This is a working fork of [chipchaderez/otp-gen-chrome-ext](https://github.com/chipchaderez/otp-gen-chrome-ext). The original project does not work as of 2023, because chrome does not support v2 version of extension. Also the original project did not support `TOTP`, rendering it inoperative for 2FA for most applications.
+> **Notice**: This is a working fork of [chipchaderez/otp-gen-chrome-ext](https://github.com/chipchaderez/otp-gen-chrome-ext). The original project does not work as of 2023, because chrome does not support v2 version of extension. Also the original project did not support `TOTP`, rendering it inoperative for 2FA for most applications.
 
 ## How 2FA works
 
@@ -12,14 +12,27 @@ A Chrome extension for generating [TOTP]([https://en.wikipedia.org/wiki/HMAC-bas
 3. The OTP generator stores the secret to create OTPs in future, the authenticating app also stores the code to verify the OTP
 4. When asked for OTP again in future(usually for 2FA at the time of login), the OTP generator creates a new OTP using the same secret and authenticating application verifies it. Match confirms that the user owns that secret code.
 
-## SETUP
+## Installation
+
+![Extension installation](/screenshots/HC0GSBfirjLtbB7nFhPH.png)
+
+
+After cloning this repo on your local system, follow these steps
+
+1. Visit [Chrome Extensions](chrome://extensions) page
+2. Enable Developer Mode
+3. Click `Load unpacked` and then choose the repo code you cloned on your system
+
+You're good to go now
+
+## Setup
 Submit the ~~HOTP~~ TOTP secret key in the options popup:
 
 ![Options Popup](/screenshots/ext_options.png)
 
-## USAGE
+## Usage
 
-### POPUP
+### Popup
 
 ![Popup](/screenshots/ext_popup_token.png)
 
@@ -40,11 +53,7 @@ Default 'Paste OTP Token' HotKey: <i>Alt+T</i>
 
 (configurable on 'chrome://extensions/configureCommands')
 
-## Notes
-
-* The extension stores locally only the secret and counter required for the HMAC-based One-time Password Algorithm.
-* The PIN code should still be manually entered.
-
 ## Future Work
 
-* CRUD for multiple tokens.
+* Support multiple websites
+* Enable QR code scan for setup on different device
