@@ -1,4 +1,4 @@
-# Basic OTP Token Generator Chrome Extension
+# 2FA OTP Token Generator Chrome Extension
 A Chrome extension for generating [TOTP]([https://en.wikipedia.org/wiki/HMAC-based_One-time_Password_Algorithm](https://en.wikipedia.org/wiki/Time-based_one-time_password)) tokens for a single secret.
 
 ![Popup](/screenshots/ext_popup.png)
